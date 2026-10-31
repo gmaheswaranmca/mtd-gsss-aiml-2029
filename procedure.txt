@@ -423,7 +423,7 @@ git commit -m "emp service - v2"
 git switch main 
 
 5.6 merge emp-service to main with custom message 
-git merge --no-ff -m "emp service - v1 & v2" feature-branch
+git merge --no-ff -m "emp service - v1 & v2" emp-service
 
 Option	Purpose
 --no-ff	Always create a merge commit
