@@ -1,0 +1,53 @@
+At the end of the course, the student will be able to
+1. Demonstrate the use of basic Git repository commands for version control operations.
+
+2. Implement branch management strategies for collaborative software development
+
+3. Apply collaboration techniques using remote repositories and distributed version control systems. 
+
+4. Configure Git tags, releases, and advanced Git operations for effective project management,
+
+5. Modify Git history to maintain repository integrity and support project requirements.
+
+
+SET OF EXPERIMENTS
+1.Setting Up and Basic Commands:
+Initialize Git repository in a directory. Create a new file and add it to the staging area, and commit the changes with an appropriate commit message
+
+2. Creating and Managing Branches
+Create a new branch named "feature-branch." Switch to the "master" branch. Merge the "feature-
+branch into "master"
+
+3. Creating and Managing Branches
+Write the commands to stash your changes, switch branches, and then apply the stashed changes.
+
+4. Collaboration and Remote Repositories:
+Clone a remote Git repository to your local machine.
+
+5. Collaboration and Remote Repositories:
+Fetch the latest changes from a remote repository and rebase your local branch onto the updated
+remote branch.
+
+6. Collaboration and Remote Repositories:
+Write the command to merge "feature-branch" into "master" while providing a custom commit message for the merge.
+
+7. Git Tags and Releases:
+Write the command to create a Eightweight Git tag named "v1.0" for a commit in your local repository.
+
+8. Advanced Git Operations:
+Write the command to cherry-pick a range of commits from "source-branch" to the current branch.
+
+9. Analysing and Changing Git History:
+Given a commit ID, how would you use Git to view the details of that specific commit, including the author, date, and commit message?
+
+10. Analysing and Changing Git History:
+VTU/AEC Lab COURSE (1 Credit) template300320262
+Write the Gat command to display all commits made by the author "JohnDoe" between "January 1,
+2025" and "December 31, 2025.
+
+11. Analysing and Changing Git History:
+Write the command to display the last five commits in the repository's history.
+
+12. Analysing and Changing Git History:
+Write the command to undo the changes introduced by the commit with the ID "abc123".
+

@@ -1,0 +1,1083 @@
+====================================================
+# Qn 1
+====================================================
+1.1
+dir: ecom_app
+
+1.2
+$ git init
+
+The below response:
+-------------------------
+Initialized empty Git repository in .../ecom_app/.git/
+-------------------------
+
+It will create repo in current dir. 
+
+1.3
+$ code .
+
+It opens "ecom_app" in vsc
+
+1.4
+Create README.md file in "ecom_app/" with content "Project : Ecom App\n"
+    ! --> File created 
+
+1.5
+$ git status
+! RED colored README.md
+
+1.6
+$ git add .\README.md
+
+The below response:
+-------------------------
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+-------------------------
+! Staged ie file is in betwee FS and Repo 
+
+1.7
+$ git status
+
+The below response:
+-------------------------
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+PS D:\2C\mywork2603\source\learning\ecom_app> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.md
+-------------------------
+! GREEN colored README.md
+
+1.8
+$ git commit -m "About Project File - Created."
+
+The below response:
+-------------------------
+[master (root-commit) 8533ebd] About Project File - Created.
+1 file changed, 1 insertion(+)
+create mode 100644 README.md
+-------------------------
+
+File changes is updated into repo. 
+
+1.9
+$ git status
+
+The below response:
+-------------------------
+On branch master
+nothing to commit, working tree clean
+-------------------------
+
+1.10
+Do changes in README.md 
+
+1.11
+$ git status
+
+RESPONSE:
+ modified:   README.md
+
+1.12
+$ git add README.md
+
+1.13
+$ git status 
+
+1.14
+$ git commit -m "About Project File - Features Listed"
+[master 6370906] About Project File - Features Listed
+ 1 file changed, 5 insertions(+)
+
+1.15
+$ git status
+
+1.16 git log
+
+It will list all commits made so far in the Git repository.
+
+Some cmds:
+git log	                Display all commits with details
+git log --oneline	    Display commits in one line each
+git log -5	            Display the last 5 commits
+git log --graph	        Display commit history as a graph
+git log --all --oneline --graph --decorate	
+                        Display all branches and commit history graphically
+
+
+====================================================
+Qn 2:
+====================================================
+2.1 Create order-service branch 
+$ git branch order-service 
+
+2.2 To see the working branch 
+$ git status 
+
+2.3 To list branches 
+$ git branch 
+
+2.4 To swith order-service branch 
+$ git switch order-service 
+
+2.5 git status 
+
+2.6 Create order dir 
+2.7 Create file docs.txt in order dir
+"Order Service will receive orders from customers."
+
+2.7 Check status 
+git status 
+2.8 Check status in detailed 
+git status *.*
+
+2.9 Stage docs.txt 
+git add order/docs.txt
+
+2.10 Commit docs.txt 
+git commit "Order Service - v1"
+
+2.11 Switch master branch 
+git switch master 
+
+2.12 Check in vsc 
+can you see order/docs.txt file there? No 
+
+2.14 To merge order-service into master branch 
+git merge order-service
+
+2.25 Check in vsc
+can you see order/docs.txt file there? Yes 
+
+====================================================
+Qn 3
+====================================================
+What is Stashing in Git?
+    Git Stashing means temporarily saving your uncommitted changes without creating a commit.
+
+    It allows you to switch to another branch, work on something else, and later restore your unfinished changes.
+
+    Real-Time Example
+    Suppose you are developing a Order Management Application.
+
+    You have two branches:
+    - master – Main application
+    - order-service – Developing order service functionality
+    You are working on order-service and have modified docs.txt, but your work is not completed.
+
+    Suddenly, you need to switch to master to fix a bug.
+
+    Instead of committing incomplete code, you can stash your changes.
+
+3.1 Switch to order-service branch 
+git switch order-service 
+
+3.2 Do changes in docs.txt 
+"Order Service will receive orders from customers.\nOrders will be processed later."
+
+3.3 stash the order-service. Do temporarily save the order-branch files.
+git stash 
+
+3.4 switch to master 
+git switch master 
+
+3.5 Do changes README.md 
+
+3.6 Stage README.md 
+git add README.md 
+
+3.7 Commit README.md 
+git commit -m "some content fixed in README.md"
+
+3.8 switch to order-service 
+git swich order-service 
+
+3.9 list stashed content 
+git stash list 
+
+Important Git Stash Commands
+Command	Purpose
+git stash	        Temporarily save changes
+git stash list	    List all saved stashes
+git stash apply	    Restore changes without deleting stash
+git stash pop	    Restore changes and remove stash on success
+git stash drop	    Delete a saved stash
+git stash clear	    Delete all stashes
+git stash -u	    Include untracked files in stash
+
+Difference Between Commit and Stash
+**Git Commit**	                                        **Git Stash**
+Permanently records a snapshot in repository history	Temporarily saves unfinished changes
+Has a commit message	                                Can have an optional stash message
+Appears in normal git log history	                    Appears in git stash list
+Used for completed units of work	                    Used for temporarily setting aside work
+
+3.10 Restore changes and remove stash on success
+git stash apply
+git stash drop  
+
+3.11 Stage and Commit 
+git add .\order\docs.txt
+git commit -m "Order Service - v2"
+
+3.12
+Task: Merge order-service to main branch 
+Task: Merge main branch to order-service branch 
+
+====================================================
+Q4
+====================================================
+Let us create mtd-gsss-hrms-project-1 in github. 
+"https://github.com/gmaheswaranmca/mtd-gsss-hrms-project-1.git" is copied "Code" section.
+
+4.1 clone the repo 
+git clone https://github.com/gmaheswaranmca/mtd-gsss-hrms-project-1.git
+
+4.2 open vsc 
+code .
+
+4.3 do add files 
+module_emp.txt
+    Employee Management - v1
+module_payroll.txt
+    Payroll Processing - v1
+
+4.3 Stage 
+git add module_emp.txt
+git add module_payroll.txt
+
+
+4.4. Local Configuration
+Applies only to the current Git repository.
+
+git config user.name "gmaheswaranmca"
+git config user.email "gmaheswaranmca@gmail.com"
+git config --list
+
+Note: To apply git globally.
+git config --global user.name "gmaheswaranmca"
+git config --global user.email "gmaheswaranmca@gmail.com"
+git config --list --global
+
+4.5 Commit 
+git commit -m "HRMS - v1"
+
+4.6 Push to github 
+git push origin main 
+
+4.7 Do changes in github 
+Add changes to 
+
+module_emp.txt
+    v2 - Planned
+
+4.8 Pull from github 
+git pull origin main 
+
+
+====================================================
+Q5
+====================================================
+Git Fetch and Rebase – Explanation with Examples
+    Let's understand these two commands using a real-world team development scenario.
+
+    Suppose you and your colleague are working on the same project using GitHub.
+    - You are working on your local computer.
+    - Your colleague is working on another computer.
+    - Both are working on the same GitHub repository.
+    - Your colleague has pushed new commits to GitHub.
+    - You want to get those changes and integrate them into your local branch.
+    This is where fetch and rebase are useful.
+
+    1. What is Git Fetch?
+    Definition: git fetch downloads the latest commits and changes from a remote repository without automatically merging them into your current local branch.
+
+    Command: git fetch origin
+
+    Here:
+        - git fetch – Downloads remote updates.
+        - origin – Default name of the remote repository (usually GitHub).
+
+    Example
+        Initially, your local repository and GitHub have the same commits.
+        Before fetch 
+            Local   A → B → C
+            GitHub  A → B → C → D → E
+
+        git fetch origin
+
+        Local branch A → B → C
+        Remote tracking branch A → B → C → D → E
+
+        Notice that your local branch is still at C. Fetch does not automatically integrate D and E into your working branch.
+
+        Useful fetch commands
+            # Fetch updates from GitHub
+            git fetch origin
+
+            # Fetch all remote branches
+            git fetch --all
+
+            # View remote branches
+            git branch -r
+
+            # View all local and remote branches
+            git branch -a
+
+        2. What is Git Rebase?
+        Definition: Git rebase moves your local commits on top of the latest commits from another branch.
+
+        In simple words, it updates your branch by replaying your local commits after the latest remote commits.
+        Example
+        Suppose the repository has this history:
+            Before rebase
+                A - B - C           Remote 
+                    B - D - E       Local 
+                    
+            Remote has A → B → C. Your local feature branch has A → B → D → E.
+
+            After rebase
+                A - B - C - D - E 
+
+        Rebase command
+            git rebase origin/main
+
+        Explanation:
+            - git rebase – Replays your local commits on top of another branch.
+            - origin/main – Updated remote-tracking branch.
+
+        3. When to use Fetch and Rebase?
+        Situation	                                    Command	                    Purpose
+        Check latest remote changes	                    git fetch origin	        Download remote updates
+        Inspect remote branches	                        git branch -r	            List remote branches
+        Integrate remote changes with linear history	git rebase origin/main  	Replay local commits
+        Integrate remote changes with merge history	    git merge origin/main	    Merge remote changes
+
+        4. Complete Practical Example
+        Suppose you are working on feature-branch and want to update it with the latest changes from GitHub's main branch.
+
+            # Step 1: Check current branch
+            git branch
+
+            # Step 2: Fetch remote changes
+            git fetch origin
+
+            # Step 3: Switch to feature branch
+            git switch feature-branch
+
+            # Step 4: Rebase onto updated remote main
+            git rebase origin/main
+
+            # Step 5: Check commit history
+            git log --oneline --graph
+
+        If there are conflicts during rebase:
+            # Resolve conflicts in the affected files
+
+            # Stage resolved files
+            git add .
+
+            # Continue rebase
+            git rebase --continue
+
+
+        Step-by-Step Explanation: Git Fetch and Rebase
+            Scenario:
+
+            You are developing a HRMS Application with your team.
+
+            There are two branches:
+            - main – Main application branch.
+            - emp-service – Your branch for developing a new feature.
+            Your colleague has made changes to main and pushed them to GitHub. Meanwhile, you have made some changes in your local emp-service.
+
+            Now you want to bring the latest main changes into your emp-service without losing your work.
+5.1 Create branch 
+git branch emp-service 
+
+5.2 switch to emp-service 
+git switch emp-service 
+
+5.3 add file + commit 
+emp\docs.txt 
+    Employee CRUD ops 
+
+ie 
+git add emp\docs.txt 
+git commit -m "emp service - v1"
+
+5.4 add file + commit 
+emp\crud-ops.txt 
+    CRUD means create, read, update and delete 
+
+ie 
+git add emp\crud-ops.txt 
+git commit -m "emp service - v2"
+
+5.5 switch to main 
+git switch main 
+
+5.6 merge emp-service to main with custom message 
+git merge --no-ff -m "emp service - v1 & v2" feature-branch
+
+Option	Purpose
+--no-ff	Always create a merge commit
+-m	Provide a custom commit message
+feature-branch	Source branch to merge
+
+Git automatically generates a default merge commit message. 
+Git creates a merge commit with your specified custom message.
+
+5.7 push main to github 
+git push origin main 
+
+5.8 switch to emp-service 
+git switch emp-service 
+
+5.9 push emp-service to github  
+git push origin emp-service 
+
+5.10 Do changes in github/main + commit 
+emp\crud-ops.txt            
+    ...
+    C - Create 
+5.11 Do changes in github/main + commit 
+emp\crud-ops.txt
+    ...
+    R - Read 
+5.12 be at emp-service 
+git status 
+git branch 
+
+5.13 Fetch remote changes
+git fetch origin
+
+What does it do?
+Downloads the latest commits and branch information from the remote repository (GitHub).
+
+5.14 To see the remote branches:
+git branch -r 
+
+5.15 Rebase onto updated remote master
+git switch emp-service 
+
+git rebase origin/main
+
+What does it do?
+
+Takes your local commits from emp-service and replays them on top of the latest origin/main commits.
+
+5.16 Check in vsc 
+merged the remote changes to emp-service? Yes 
+
+====================================================
+Q6
+====================================================
+Task: Do some changes in emp-service. Merge to main using custom message.
+
+
+====================================================
+Q7
+====================================================
+Git Tags and Releases – Explanation with Examples
+    Let's understand Git Tags and Releases using a real-world software development example.
+
+    Suppose you are developing a Student Management Application.
+
+    You have completed development and testing of version 1.0. Later, you add new features and release version 2.0.
+
+    How do you identify which commit represents version 1.0 or version 2.0?
+
+    This is where Git Tags and Releases are useful.
+    1. What is a Git Tag?
+    Definition: A Git Tag is a label attached to a specific commit in a Git repository.
+
+    It helps identify important points in the project's history, such as software versions or releases.
+
+    For example:
+    - v1.0 – First stable version.
+    - v1.1 – Bug fixes.
+    - v2.0 – Major feature update.
+    - v2.1 – Minor improvements.
+    Example
+    Suppose your commit history looks like this:
+    A → B → C → D → E → F
+            ↑           ↑
+          v1.0        v2.0
+
+
+    Here:
+        - Commit C represents version 1.0.
+        - Commit F represents version 2.0.
+    Tags help you identify these important commits easily.
+    2. Types of Git Tags
+    Git provides two types of tags.
+    A. Lightweight Tag
+        A lightweight tag is simply a name pointing to a specific commit.
+
+        Command:
+        git tag v1.0
+
+
+    This creates a tag named v1.0 for the current commit.
+    B. Annotated Tag
+        An annotated tag stores additional information, such as:
+        - Tag creator
+        - Date
+        - Tag message
+        - Tag name
+        Command:
+        git tag -a v1.0 -m "Version 1.0 Release"
+
+
+        Here:
+        - -a – Creates an annotated tag.
+        - v1.0 – Tag name.
+        - -m – Tag message.
+
+    Recommended
+    Annotated tags are generally preferred for official releases.
+
+    3. Important Git Tag Commands
+        Command	Purpose
+        git tag	List all tags
+        git tag v1.0	Create lightweight tag
+        git tag -a v1.0 -m "Release"	Create annotated tag
+        git show v1.0	Display tag details
+        git tag -d v1.0	Delete local tag
+        git push origin v1.0	Push a specific tag to GitHub
+        git push origin --tags	Push all local tags
+
+        Tag a Specific Commit
+        git tag -a v1.0 abc123 -m "Version 1.0 Release"
+
+
+        Here, abc123 is the commit ID.
+    4. What is a Git Release?
+        Definition: A Git Release is a published version of your software associated with a Git tag.
+
+        GitHub provides a Release feature that allows developers to publish software versions with additional information.
+
+        For example, your Student Management Application has reached version 1.0.
+
+        You can publish a GitHub Release containing:
+        - Version number: v1.0
+        - Release title: Student Management Application – Version 1.0
+        - Release description: Features included in this version.
+        - Source code ZIP file.
+        - Source code TAR file.
+        - Downloadable application packages, if provided.
+
+    How to Create a GitHub Release
+        1. Open your GitHub repository.
+        2. Click Releases.
+        3. Click Create a new release.
+        4. Select or create a tag, such as v1.0.
+        5. Enter the release title.
+        6. Add release notes.
+        7. Click Publish release.
+        GitHub Releases are built around Git tags.
+        5. Difference Between Git Tags and Releases
+        Git Tag	                            Git Release
+        Identifies a specific commit	Publishes a software version
+        Created using Git commands	    Usually created through GitHub UI or API
+        Contains a tag name	            Contains tag, title and release notes
+        Exists in Git repository	    Is a hosting-platform feature
+        Example: v1.0	                Example: Student App Version 1.0
+
+        Remember: A Git Tag is a marker in Git history. A Git Release is a published version of the software based on that marker.
+        6. Practical Lab Example
+        Let's assume you have completed the first version of your application.
+        # Step 1: Check commit history
+        git log --oneline
+
+        # Step 2: Create an annotated tag
+        git tag -a v1.0 -m "First stable release"
+
+        # Step 3: List all tags
+        git tag
+
+        # Step 4: View tag details
+        git show v1.0
+
+        # Step 5: Push tag to GitHub
+        git push origin v1.0
+
+
+        Now your GitHub repository has the v1.0 tag.
+
+        You can use this tag to create a GitHub Release.
+
+
+::Experiment::
+7.1 switch to main 
+git switch main 
+
+7.2 Check commit history
+git log --oneline
+
+7.3 Create an annotated tag
+git tag -a v1.0 -m "HRMS - v1"
+
+7.4 List all tags
+git tag
+
+7.5 View tag details
+git show v1.0
+
+7.6 Push tag to GitHub
+git push origin v1.0
+
+Now your GitHub repository has the v1.0 tag.
+
+You can use this tag to create a GitHub Release.
+
+
+====================================================
+Q8
+====================================================
+
+Git Cherry-Pick – Explanation with Examples
+Let's understand Cherry-Pick using a real-world team development scenario.
+1. What is Git Cherry-Pick?
+Definition: Git Cherry-Pick allows you to select specific commits from one branch and apply those changes to another branch without merging the entire source branch.
+
+In simple words:
+
+You can pick only the commits you need from another branch.
+2. Real-World Example
+Suppose you are developing a Student Management Application.
+
+You have two branches:
+- master – Main application.
+- source-branch – Development branch.
+Your colleague has made three changes in source-branch:
+1. Commit A – Added student registration.
+2. Commit B – Added student search.
+3. Commit C – Fixed login bug.
+But you only need the login bug fix in your master branch.
+
+Do you need to merge the entire source-branch?
+
+No! You can use Cherry-Pick.
+
+Notice:
+- Registration changes are not copied.
+- Search changes are not copied.
+- Login bug fix is copied.
+- The cherry-picked change gets a new commit ID.
+
+3. Cherry-Pick a Single Commit
+First, switch to the branch where you want to apply the change.
+
+# Switch to master
+git switch master
+
+# Cherry-pick a specific commit
+git cherry-pick abc123
+
+Here:
+- master – Destination branch.
+- abc123 – Commit ID to be copied.
+
+4. Cherry-Pick a Range of Commits
+Suppose source-branch contains these commits:
+
+You want to copy commits C, D and E into your current branch.
+
+Command: git cherry-pick C^..E
+
+Explanation:
+Part	Meaning
+C	Starting commit
+C^	Parent of starting commit
+..	Commit range operator
+E	Ending commit
+
+Why C^..E?
+
+Git's range notation C^..E means commits reachable from E, excluding commits reachable from the parent of C.
+
+Therefore, it includes C, D and E.
+
+Important: The range is inclusive of both the starting and ending commits.
+5. Complete Practical Lab
+Let's assume you want to cherry-pick commits from source-branch into master.
+
+Explanation:
+Part	Meaning
+C	Starting commit
+C^	Parent of starting commit
+..	Commit range operator
+E	Ending commit
+
+Why C^..E?
+
+Git's range notation C^..E means commits reachable from E, excluding commits reachable from the parent of C.
+
+Therefore, it includes C, D and E.
+
+Important: The range is inclusive of both the starting and ending commits.
+5. Complete Practical Lab
+Let's assume you want to cherry-pick commits from source-branch into master.
+
+# Step 1: View all branches
+git branch
+
+# Step 2: Switch to source branch
+git switch source-branch
+
+# Step 3: View commit history
+git log --oneline
+
+# Step 4: Note the starting and ending commit IDs
+
+# Step 5: Switch to destination branch
+git switch master
+
+# Step 6: Cherry-pick the range
+git cherry-pick <start-commit>^..<end-commit>
+
+# Step 7: Verify commit history
+git log --oneline
+
+6. What if Cherry-Pick Causes Conflicts?
+Sometimes the changes you are copying conflict with existing code in the destination branch.
+
+Git pauses the operation.
+# Step 1: Resolve conflicts manually
+
+# Step 2: Stage resolved files
+git add .
+
+# Step 3: Continue cherry-pick
+git cherry-pick --continue
+
+To cancel the operation: git cherry-pick --abort
+
+7. Cherry-Pick vs Merge
+This is an important distinction for students.
+Cherry-Pick	Merge
+Copies selected commits	Integrates branch changes
+Can select individual commits	Combines branch histories
+Does not merge the entire source branch	Merges the source branch
+Creates new commit IDs for copied commits	Usually preserves existing commit IDs
+
+
+====================================================
+Q9
+====================================================
+
+## Git – View Details of a Specific Commit
+
+Question: Given a commit ID, how would you use Git to view the details of that specific commit, including the author, date, and commit message?
+
+### 1. Git Command
+
+```
+git show <commit-id>
+```
+
+Example:
+
+```
+git show abc123
+```
+
+### 2. What does `git show` do?
+
+The `git show` command displays detailed information about a specific commit.
+
+It displays:
+
+1. Commit ID (SHA)
+2. Author name
+3. Author email
+4. Author date
+5. Commit message
+6. Files changed
+7. Code changes (diff)
+
+### 3. Example Output
+
+```
+commit abc123456789
+Author: John Doe <johndoe@gmail.com>
+Date:   Fri Oct 30 10:30:00 2026 +0530
+
+    Added student registration functionality
+
+diff --git a/student.py b/student.py
+...
+```
+
+### 4. Other Useful Commands
+
+| Command                           | Purpose                                  |
+| --------------------------------- | ---------------------------------------- |
+| `git log`                         | Display commit history                   |
+| `git log --oneline`               | Display compact commit history           |
+| `git show abc123`                 | Display specific commit details          |
+| `git show --stat abc123`          | Display files changed and statistics     |
+| `git show --format=fuller abc123` | Display detailed author and commit dates |
+
+### 5. Practical Lab Steps
+
+```
+# Step 1: List commits
+git log --oneline
+
+# Step 2: Copy a commit ID
+
+# Step 3: View commit details
+git show <commit-id>
+```
+
+Lab Answer
+
+Answer:
+
+```
+git show <commit-id>
+```
+
+This command displays the details of a specific commit, including commit ID, author, date, commit message, and changes introduced by that commit.
+
+Remember: `git log` lists commits, whereas `git show` displays the detailed information of a particular commit.
+
+====================================================
+Q10
+====================================================
+
+## 10. Display Commits by Author Within a Date Range
+
+Question: Write the Git command to display all commits made by the author `JohnDoe` between January 1, 2025 and December 31, 2025.
+
+### 1. Git Command
+
+```
+git log --author="JohnDoe" --since="2025-01-01" --until="2025-12-31"
+```
+
+### 2. Explanation
+
+| Option                 | Meaning                        |
+| ---------------------- | ------------------------------ |
+| `git log`              | Displays commit history        |
+| `--author="JohnDoe"`   | Filters commits by author name |
+| `--since="2025-01-01"` | Specifies the starting date    |
+| `--until="2025-12-31"` | Specifies the ending date      |
+
+### 3. Example Output
+
+```
+commit abc123456
+Author: JohnDoe <john@gmail.com>
+Date:   Mar 15 2025
+
+    Added student registration
+
+commit def456789
+Author: JohnDoe <john@gmail.com>
+Date:   Aug 20 2025
+
+    Updated student details
+
+commit ghi789123
+Author: JohnDoe <john@gmail.com>
+Date:   Dec 10 2025
+
+    Fixed login functionality
+```
+
+### 4. Useful Variations
+
+```
+# Display in compact format
+git log --oneline --author="JohnDoe" --since="2025-01-01" --until="2025-12-31"
+
+# Display author and date
+git log --format="%h %an %ad %s" --author="JohnDoe" --since="2025-01-01" --until="2025-12-31"
+```
+
+VTU Lab Answer
+
+```
+git log --author="JohnDoe" --since="2025-01-01" --until="2025-12-31"
+```
+
+Remember:
+
+- `--author` → Who made the commit?
+- `--since` → From which date?
+- `--until` → Up to which date?
+- `git log` → Display commit history.
+
+Note: Git filters by author identity, not necessarily the GitHub username. The date filters use the commit author date.
+
+====================================================
+Q11
+====================================================
+## 11. Display the Last Five Commits
+
+Question: Write the Git command to display the last five commits in the repository's history.
+
+### 1. Git Command
+
+```
+git log -5
+```
+
+### 2. Explanation
+
+| Part      | Meaning                               |
+| --------- | ------------------------------------- |
+| `git log` | Displays commit history               |
+| `-5`      | Displays only the latest five commits |
+
+### 3. Example Output
+
+```
+commit abc123
+Author: John Doe
+Date:   Oct 30 2026
+
+    Added student registration
+
+commit def456
+Author: John Doe
+Date:   Oct 29 2026
+
+    Updated student details
+```
+
+The output continues until five commits are displayed.
+
+### 4. Useful Variations
+
+```
+# Display last five commits in one-line format
+git log -5 --oneline
+
+# Display last five commits with graph
+git log -5 --oneline --graph
+
+# Display last five commits with author and date
+git log -5 --format="%h %an %ad %s"
+```
+
+VTU Lab Answer
+
+```
+git log -5
+```
+
+Remember: `git log` displays commit history, and `-5` limits the output to the latest five commits.
+
+====================================================
+Q12
+====================================================
+## 12. Undo Changes Introduced by a Commit
+
+Question: Write the Git command to undo the changes introduced by the commit with the ID `abc123`.
+
+### 1. Git Command
+
+```
+git revert abc123
+```
+
+### 2. What does `git revert` do?
+
+`git revert` creates a new commit that reverses the changes introduced by an earlier commit.
+
+It does not delete the original commit or rewrite the repository history.
+
+### 3. Example
+
+Suppose your commit history is:
+
+```
+A → B → C → D
+```
+
+- A – Initial commit
+- B – Added student registration
+- C – Added student search
+- D – Updated student details
+
+You discover that commit C introduced a bug.
+
+Execute:
+
+```
+git revert C
+```
+
+Git creates a new commit E that reverses the changes introduced by C.
+
+Before revert
+
+A
+
+B
+
+C
+
+D
+
+After revert
+
+A
+
+B
+
+C
+
+D
+
+E
+
+E = New commit reversing C
+
+Original commit C remains in history.
+
+### 4. Useful Variations
+
+```
+# Revert a commit
+git revert abc123
+
+# Revert without automatically committing
+git revert --no-commit abc123
+
+# View commit history
+git log --oneline
+```
+
+### 5. Difference Between Git Revert and Git Reset
+
+| Git Revert                  | Git Reset                                      |
+| --------------------------- | ---------------------------------------------- |
+| Creates a new commit        | Moves the branch pointer                       |
+| Preserves existing history  | Can rewrite local history                      |
+| Safer for shared branches   | Must be used carefully                         |
+| Reverses a commit's changes | Can remove commits from current branch history |
+
+VTU Lab Answer
+
+```
+git revert abc123
+```
+
+Explanation: This command undoes the changes introduced by commit `abc123` by creating a new commit. The original commit remains in the repository history.
+
+Remember:
+
+- `git revert` = Undo changes safely by creating a new commit.
+- `git reset` = Move the branch pointer to an earlier commit.
